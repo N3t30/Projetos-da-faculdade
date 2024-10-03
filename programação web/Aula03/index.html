@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h3, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Exemplo Formulario</h3>
+    <form action="exformularioprocessa.jsp" method="post">
+        <p>Digite seus Dados</p>
+        <table>
+            <tr>
+                <td> Nome: </td>
+                <td>
+                    <input name="Nome" placeholder="Escreva seu Nome" maxlength="20" autofocus="autofocus"
+                        required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td> E-mail: </td>
+                <td>
+                    <input email="E-mail" placeholder="Escreva seu email" maxlength="15" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td> Sexo: </td>
+                <td>
+                    <input type="radio" name="sexo" value="F" /> Feminino <br>
+                    <input type="radio" name="sexo" value="M" checked /> MAsculino <br>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
+
+</body>
+
+</html>

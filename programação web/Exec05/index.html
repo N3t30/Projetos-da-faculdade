@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora simples</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form>
+        <strong>
+            <label for="valor1">Valor 1:</label>
+            <input type="text" id="valor1" name="valor1" class="input-text"><br>
+
+
+            <label id="valor2" for="valor2">Valor 2:</label>
+            <input type="text" id="valor2" name="valor2" class="input-text"><br>
+            <div>
+
+                <label id="Opções" for="Opções">Opções:</label>
+                <p>
+        </strong>
+        </p>
+        <input type="radio" id="soma" name="operacao" value="soma">
+        <label for="soma">SOMA</label><br>
+
+        <input type="radio" id="subtracao" name="operacao" value="subtracao">
+        <label for="subtracao">SUBTRAÇÃO</label><br>
+
+        <input type="radio" id="multiplicacao" name="operacao" value="multiplicacao">
+        <label for="multiplicacao">MULTIPLICAÇÃO</label><br>
+
+        <input id="input3" type="radio" id="divisao" name="operacao" value="divisao">
+        <label for="divisao">DIVISÃO</label><br>
+        </div>
+
+        <strong>
+            <label for="resultado">Resultado:</label><br>
+            <input type="text" id="resultado" name="resultado" class="input-text" readonly><br>
+        </strong>
+
+
+        <button type="submit" class="btn-calcular">Calcular</button>
+
+
+    </form>
+
+</body>
+
+</html>

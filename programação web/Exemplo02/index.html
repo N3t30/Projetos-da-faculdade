@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 02</title>
+</head>
+
+<body>
+
+    <h1>Principal - imagem </h1>
+    <!-abrir imagem com link->
+        <!-Assim como imagens posso abrir qualquer link selecionado->
+            <a href="download.jpeg"> Abrir imagem</a>
+            <br>
+            <br>
+
+
+            <!-Exemplos de exportação de imagens para arquivos HTML arquivo de imagem quw já esta na pasta->
+                <img src="download.jpeg" alt="">
+                <!-Para arquivos que estão fora da pasta pricnipal->
+                    <img src="../Exemplo02/imgs/download (1).jpeg" alt="">
+                    <img src="" alt="">
+                    <br>
+                    <br>
+
+                    <h1>formulário</h1>
+                    <!-Form dispara ações->
+                        <!-"Input" tag para entrada de dados e que tem diversas variações->
+                            <!-O "type" que ira fazer essas variações->
+                                <!-Exemplos text, password, hidden, check-box, rádio, name, id e etc->
+                                    <form action="">
+                                        <fieldset>
+                                            <legend>Infomações pessoais</legend>
+                                            <br>
+                                            Primeiro nome :
+                                            <br>
+                                            <input type="text" name="firstname" placeholder="Digite seu nome">
+                                            <br>
+                                            Segundo nome :
+                                            <br>
+                                            <input type="text" name="Lastname" placeholder="Digite seu ultimo nome">
+                                            <br>
+                                            <!-Exemplo de check-box->
+                                                <input type="checkbox" name="Sim" value="Sim">Sim
+                                                <br>
+                                                <input type="checkbox" name="Não" value="Não">Não
+                                                <br>
+                                                <!-Exemplo de rádio->
+                                                    <br>
+                                                    <input type="radio" name="Gênero" value="Masculino">Masculino
+                                                    <br>
+                                                    <input type="radio" name="Gênero" value="Feminino">Feminino
+                                                    <br>
+                                                    <input type="submit" value="enviar">
+                                                    <!-Lembrando que submit, enviar, firstname, Lastname, são referentes
+                                                        a programação back-end estão só de exemplos.->
+                                        </fieldset>
+                                    </form>
+
+</body>
+
+</html>

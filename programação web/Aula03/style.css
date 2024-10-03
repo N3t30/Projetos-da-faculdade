@@ -1,0 +1,19 @@
+p {
+    color: blue;
+    font-family: verdana;
+}
+
+b {
+    color: red;
+    font-family: "sans serif";
+}
+
+i {
+    color: red;
+    font-family: "sans serif";
+}
+
+body {
+    color: green;
+    font-family: "sans serif";
+}

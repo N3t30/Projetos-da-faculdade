@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exec salario06</title>
+</head>
+
+<body>
+    <script>
+
+        let numeros = [];
+
+        let quantidade = parseInt(prompt("Quantos números você deseja inserir?"));
+        for (let i = 0; i < quantidade; i++) {
+            let numero = parseFloat(prompt("Digite o número " + (i + 1) + ":"));
+            numeros.push(numero);
+        }
+        let soma = 0;
+        for (let i = 0; i < numeros.length; i++) {
+            soma += numeros[i];
+        }
+
+        let media = soma / numeros.length;
+        console.log("A média aritmética é:", media);
+    </script>
+</body>
+
+</html>

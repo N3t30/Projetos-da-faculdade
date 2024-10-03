@@ -1,0 +1,33 @@
+*{  font-family: verdana;
+    font-size: 18pt;
+    margin: 0;
+    padding: 200;
+}
+
+.input-text{
+    background-color: yellow;
+    border: 1px solid black;
+    width: 200px;
+    margin-top: 2%;
+    
+}
+
+body{
+    background-color: white;
+    font-family: verdana;
+    font-size: 18pt;
+    border: double 22px red;
+    width: 400px;
+
+}
+
+form{
+    size: 400px;
+    padding: 30px;
+    
+}
+
+button {
+    background-color: rgb(227, 211, 227);
+    margin-top: 3;
+}
