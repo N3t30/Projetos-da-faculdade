@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function mostraDados() {
+            let msg = "";
+            msg += "Login: " + document.getElementById("login").value + " | ";
+            msg += "Senha: " + document.getElementById("senha").value;
+            alert(msg);
+            console.log(msg)
+        }
+        window.onload = function () {
+            document.getElementById("btn").onclick = function () {
+                mostraDados();
+            }
+        }
+    </script>
+
+    <form name="form1" id="form1" method="post" action="">
+        Login:
+        <input name="login" type="text" id="login" size="15"><br>
+        Senha:
+        <input name="senha" type="password" id="senha" size="10"><br>
+        <input type="button" name="button" id="btn" value="OK">
+    </form>
+
+</body>
+
+</html>
