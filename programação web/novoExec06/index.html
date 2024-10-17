@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>novoExec06</title>
+</head>
+
+<body>
+    <!-- Elabore um script que leia o valor (preço) de um produto e a condição de pagamento conforme tabela
+    abaixo. Exiba ao final do script, o valor real do produto e o valor a ser pago (conforme tabela), leia os valores
+    por meio de um formulário e mostre as mensagens em campos de texto do form -->
+    <h1>Valor do produto a ser pago conforme a tabela</h1>
+    <p>A vista: 10% de desconto</p>
+    <p>Cartão: 5% de desconto</p>
+    <p>Parcelado: 10% de aumento</p>
+
+    <label for="valor">Informe o valor do produto</label>
+    <input type="number" id="valor" placeholder="Digite aqui">
+    <br>
+    <label for="condição">escolha a condição</label>
+    <select id="condicao">
+        <option value="Avista">A vista</option>
+        <option value="cartão">cartão</option>
+        <option value="Parcelado">Parcelado</option>
+    </select>
+    <br>
+    <button onclick="Resultado()">calcular</button>
+    <br>
+    <textarea id="resultado" readonly></textarea>
+
+    <script>
+        function Resultado() {
+            const valor = parseFloat(document.getElementById("valor").value);
+            const resultado = document.getElementById("resultado");
+            const condicao = document.getElementById("condicao").value;
+            // const Avista = condicao.options[0];
+            // const cartão = condicao.options[1];
+            // const Parcelado = condicao.options[2];
+
+            let valofinal;
+
+            if (condicao === "Avista") {
+                valorfinal = valor * 0.90;
+            } else if (condicao === "cartão") {
+                valorfinal = valor * 0.95;
+            } else {
+                valorfinal = valor * 1.10;
+            }
+
+            resultado.value = 'Valor a ser pago: R$ ' + valorfinal.toFixed(2);
+        }
+    </script>
+
+</body>
+
+</html>

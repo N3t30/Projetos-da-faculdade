@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exec05</title>
+</head>
+
+<body>
+    <!-- Faça um script que receba três notas reais (três campos de texto), calcule e mostre a média do aluno e o
+    c   onceito conforme regras abaixo -->
+    <!-- >= 6 = Aprovado | >=3 e < 6 = Exame | <3 Reprovado -->
+
+    <h1>Média com conceitos</h1>
+
+    <label for="nota1">Informe a nota 1</label>
+    <input type="number" id="nota1" placeholder="Nota 1">
+    <br>
+    <label for="nota2">Informe a nota 2</label>
+    <input type="number" id="nota2" placeholder="Nota 2">
+    <br>
+    <label for="nota3">Informe a nota 2</label>
+    <input type="number" id="nota3" placeholder="Nota 3">
+    <br>
+
+    <button onclick="ResultadoNota()">Calcular</button>
+    <br>
+    <textarea id="resultado" rows="8" cols="20"></textarea>
+
+    <script>
+        function ResultadoNota() {
+            const nota1 = parseFloat(document.getElementById("nota1").value);
+            const nota2 = parseFloat(document.getElementById("nota2").value);
+            const nota3 = parseFloat(document.getElementById("nota3").value);
+            const resultadoM = document.getElementById("resultado");
+
+            const media = (nota1 + nota2 + nota3) / 3;
+
+            if (media >= 6) {
+                resultadoM.value = 'você está APROVADO parabéns sua média foi: ' + media;
+            } else if (media >= 3 && media < 6) {
+                resultadoM.value = 'Voce terá que fazer um EXAME sua média foi: ' + media;
+            } else {
+                resultadoM.value = 'sinto muito, REPROVADO sua media foi: ' + media;
+            }
+        }
+    </script>
+</body>
+
+</html>

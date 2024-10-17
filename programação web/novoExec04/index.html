@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exec04</title>
+</head>
+
+<body>
+    <!-- Crie um arquivo HTML que utilizando JavaScript leia a base e a altura de um retângulo (por meio de um
+    formulário), calcule sua área e apresente os resultados em um campo de texto ou textarea. -->
+    <h1>Base e altuta retângulo</h1>
+
+    <label for="altura">Digite o valor da altura</label>
+    <input type="number" id="altura" placeholder="Digite arquivo">
+    <br>
+    <label for="base">Digite o valor da base</label>
+    <input type="number" id="base" placeholder="Digite o valor da base">
+    <br>
+    <button onclick="calcular()">Calcular</button>
+    <br>
+    <textarea id="resultado" cols="15" rows="4"></textarea>
+
+    <script>
+        function calcular() {
+            const altura = parseFloat(document.getElementById("altura").value);
+            const base = parseFloat(document.getElementById("base").value);
+            const resultadoA = document.getElementById("resultado");
+
+            if (isNaN(altura) || isNaN(base)) {
+                resultadoA.value = 'Por favor, digite um valor valido';
+            } else {
+                resultadoA.value = altura * base + ' é a area do retângulo';
+            }
+        }
+    </script>
+</body>
+
+</html>

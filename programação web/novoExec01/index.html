@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execnv01</title>
+</head>
+
+<body>
+    <!-- Criar um script que solicite ao usuário o valor total da compra e a quantidade de parcelas a
+financiar e o sistema deve visualizar o valor de cada parcela de acordo com os juros da tabela
+abaixo. Utilize campos de texto para ler os valores e dar a resposta ao usuário -->
+
+    <h1>calculadora de parcelas</h1>
+    <label for="valor">Valor total da compra</label>
+    <input type="number" id="valor" placeholder="Digite o valor">
+
+    <label for="parcelas">Quantidade de parcelas</label>
+    <input type="number" id="parcelas" placeholder="Digite a quantidade">
+
+    <button onclick="Calcularparcelas()">Calcular</button>
+
+    <h2 id="resultado"></h2>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

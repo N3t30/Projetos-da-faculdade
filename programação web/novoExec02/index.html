@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Faça um script que receba um número inteiro e mostre se esse número é par ou ímpar. Leia o
+número em um campo de texto e mostre a saída em outro campo de texto ou textarea. -->
+    <h1>Verificação de um Número par ou impar</h1>
+    <label for="numero">Digiteum numero inteiro</label>
+    <input type="number" id="numero" placeholder="Digite aqui" required>
+    <br>
+    <button onclick="verificarParouImpar()">Verificar</button>
+    <br>
+    <textarea id="resultado" rows="4" cols="30" readonly></textarea>
+    <br>
+    <script>
+        function verificarParouImpar() {
+            const numero = parseInt(document.getElementById("numero").value);
+
+            // verificação se é valido
+            if (isNaN(numero)) {
+                document.getElementById("resultado").value = "Por favor, insira um número válido";
+                return;
+            }
+
+            // verificar se o numero é valido
+            if (numero % 2 === 0) {
+                document.getElementById("resultado").value = numero + ' é par';
+            } else {
+                document.getElementById("resultado").value = numero + ' é impar';
+            }
+        }
+    </script>
+</body>
+
+</html>

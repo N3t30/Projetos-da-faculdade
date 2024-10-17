@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>novoEXec07</title>
+</head>
+
+<body>
+    <!-- Fazer uma página HTML que leia a altura, o peso e o sexo de uma pessoa por meio de um formulário e
+    mostre na página o IMC (Índice de Massa Corporal) da pessoa e a categoria na qual se enquadra segundo
+    a OMS (Organização Mundial de Saúde). Cada informação deve ser apresentada em uma linha e a
+    formatação da fonte utilizando classe CSS deve seguir a seguinte regra:
+    - fonte Arial, azul, 24pt.
+    A fórmula para o cálculo do IMC é dada por: IMC = peso / (altura * altura)
+    A tabela a seguir mostra as faixas para homens e mulheres. -->
+
+    <h1> Indice de massa corporal </h1>
+    <form>
+        <label id="altura">Digite a sua altura</label>
+        <input type="number" id="altura" placeholder="Digite aqui">
+        <br>
+        <label id="peso">Digite o seu peso</label>
+        <input type="number" id="peso" placeholder="Digite aqui">
+        <br>
+        <label id="sexo">Informe seu sexo</label>
+        <br>
+        <input type="radio" id="Feminino" name="sexo" value="F"> Feminino
+        <input type="radio" id="Masculino" name="sexo" value="M"> Masculino
+        <br>
+        <label id="botao">Clique para saber seu IMC e sua categoria</label>
+        <button id="resultado" onclick="calcular(event)">calcular</button>
+        <br>
+        <textarea id="resultadotext" cols="15" rows="3" readonly></textarea>
+    </form>
+
+    <script>
+        function calcular() {
+            event.
+                preventDefault();
+            const altura = parseFloat(document.getElementById("altura").value);
+            const peso = parseFloat(document.getElementById("peso").value);
+            const radios = document.getElementsByName("sexo");
+            const resultado = document.getElementById("resultado")
+            const resultadotext = document.getElementById("resultadotext").value;
+
+            let sexo;
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    sexo = radios[i].value;
+                    break;
+                }
+            }
+
+            let IMC = peso / (altura * altura);
+
+            if (isNaN(altura) || isNaN(peso) || !sexo) {
+                resultadotext.value = document.getElementById("resultado") = 'insira um valor valido';
+            } else if (radios === "m") {
+                if (IMC < 20.7) {
+                    resultadotext.value = document.getElementById("resultado") = 'Você está abaixo do peso';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <!-- Faça um script que receba dois números inteiros e mostre qual é o maior ou se são iguais.
+Leia os valores por meio de um formulário e mostre a mensagem final em um campo de texto -->
+    <h1>Números diferentes ou iguais</h1>
+    <label for="numero1">Digite o primeiro nùmero</label>
+    <input type="number" id="numero01" placeholder="Digite aqui">
+    <br>
+    <label for="numero02">Digite o segundo númeto</label>
+    <input type="number" id="numero02" placeholder="Digite aqui">
+
+    <button onclick="ver()">Reresultado</button>
+
+    <textarea id="resultado" role="4" cols="30"></textarea>
+
+    <script>
+        function ver() {
+            const numero01 = parseFloat(document.getElementById("numero01").value);
+            const numero02 = parseFloat(document.getElementById("numero02").value);
+            const resultado = document.getElementById("resultado");
+
+
+            if (isNaN(numero01) || isNaN(numero02)) {
+                resultado.value = 'Por favor, digite um valor valido';
+            } else if (numero01 > numero02) {
+                resultado.value = numero01 + ' é maior que ' + numero02;
+            } else if (numero01 < numero02) {
+                resultado.value = numero02 + ' é maior que ' + numero01;
+            } else {
+                resultado.value = numero01 + ' e ' + numero02 + " são iguais ";
+            }
+        }
+    </script>
+</body>
+
+</html>
