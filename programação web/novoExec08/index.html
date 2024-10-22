@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do Imposto de Renda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: blue;
+            font-size: 18pt;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            margin-top: 5px;
+            padding: 5px;
+            font-size: 16pt;
+            width: 200px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16pt;
+            background-color: lightblue;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: deepskyblue;
+        }
+
+        textarea {
+            margin-top: 20px;
+            width: 100%;
+            height: 80px;
+            font-size: 18pt;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cálculo do Imposto de Renda</h1>
+    <form>
+        <label for="salario">Digite o seu salário:</label>
+        <input type="number" id="salario" placeholder="Digite aqui" step="0.01" required>
+
+        <button onclick="calcularIR(event)">Calcular Imposto de Renda</button>
+
+        <label for="resultado">Imposto de Renda:</label>
+        <textarea id="resultado" readonly></textarea>
+    </form>
+
+    <script>
+        function calcularIR(event) {
+            event.preventDefault();
+            const salario = parseFloat(document.getElementById("salario").value);
+            let imposto = 0;
+
+            if (salario <= 1434) {
+                imposto = 0;
+            } else if (salario > 1434 && salario <= 2150) {
+                imposto = salario * 0.075;
+            } else if (salario > 2150 && salario <= 2866) {
+                imposto = salario * 0.15;
+            } else if (salario > 2866 && salario <= 3582) {
+                imposto = salario * 0.225;
+            } else if (salario > 3582) {
+                imposto = salario * 0.275;
+            }
+
+            document.getElementById("resultado").value = "Imposto de Renda: R$ " + imposto.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

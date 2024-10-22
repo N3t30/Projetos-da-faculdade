@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Operações</title>
+</head>
+
+<body>
+    <h1>Cálculo de Operações</h1>
+    <form>
+        <label for="numero1">Número 1:</label>
+        <br>
+        <input type="number" id="numero1" required>
+        <br>
+        <label for="numero2">Número 2:</label>
+        <br>
+        <input type="number" id="numero2" required>
+        <br>
+        <button onclick="calcularSoma(event)">Somar</button>
+        <button onclick="calcularSubtracao(event)">Subtrair</button>
+        <button onclick="calcularMultiplicacao(event)">Multiplicar</button>
+        <button onclick="calcularDivisao(event)">Dividir</button>
+
+        <label for="resultado">Resultado:</label>
+        <input type="text" id="resultado" readonly>
+    </form>
+
+    <script>
+        function calcularSoma(event) {
+            event.preventDefault();
+            const num1 = parseFloat(document.getElementById("numero1").value);
+            const num2 = parseFloat(document.getElementById("numero2").value);
+            const resultado = num1 + num2;
+            document.getElementById("resultado").value = resultado;
+        }
+
+        function calcularSubtracao(event) {
+            event.preventDefault();
+            const num1 = parseFloat(document.getElementById("numero1").value);
+            const num2 = parseFloat(document.getElementById("numero2").value);
+            const resultado = num1 - num2;
+            document.getElementById("resultado").value = resultado;
+        }
+
+        function calcularMultiplicacao(event) {
+            event.preventDefault();
+            const num1 = parseFloat(document.getElementById("numero1").value);
+            const num2 = parseFloat(document.getElementById("numero2").value);
+            const resultado = num1 * num2;
+            document.getElementById("resultado").value = resultado;
+        }
+
+        function calcularDivisao(event) {
+            event.preventDefault();
+            const num1 = parseFloat(document.getElementById("numero1").value);
+            const num2 = parseFloat(document.getElementById("numero2").value);
+            const resultado = num2 !== 0 ? num1 / num2 : 'Erro: Divisão por zero';
+            document.getElementById("resultado").value = resultado;
+        }
+    </script>
+</body>
+
+</html>

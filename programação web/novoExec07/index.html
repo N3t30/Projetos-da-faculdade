@@ -1,67 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>novoEXec07</title>
+    <title>Índice de Massa Corporal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: blue;
+            font-size: 24pt;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        select {
+            margin-top: 5px;
+            padding: 5px;
+            font-size: 16pt;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 18pt;
+            background-color: lightblue;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: deepskyblue;
+        }
+
+        textarea {
+            margin-top: 20px;
+            width: 100%;
+            height: 80px;
+            font-size: 18pt;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Fazer uma página HTML que leia a altura, o peso e o sexo de uma pessoa por meio de um formulário e
-    mostre na página o IMC (Índice de Massa Corporal) da pessoa e a categoria na qual se enquadra segundo
-    a OMS (Organização Mundial de Saúde). Cada informação deve ser apresentada em uma linha e a
-    formatação da fonte utilizando classe CSS deve seguir a seguinte regra:
-    - fonte Arial, azul, 24pt.
-    A fórmula para o cálculo do IMC é dada por: IMC = peso / (altura * altura)
-    A tabela a seguir mostra as faixas para homens e mulheres. -->
-
-    <h1> Indice de massa corporal </h1>
+    <h1> Índice de Massa Corporal </h1>
     <form>
-        <label id="altura">Digite a sua altura</label>
-        <input type="number" id="altura" placeholder="Digite aqui">
-        <br>
-        <label id="peso">Digite o seu peso</label>
-        <input type="number" id="peso" placeholder="Digite aqui">
-        <br>
-        <label id="sexo">Informe seu sexo</label>
-        <br>
-        <input type="radio" id="Feminino" name="sexo" value="F"> Feminino
-        <input type="radio" id="Masculino" name="sexo" value="M"> Masculino
-        <br>
-        <label id="botao">Clique para saber seu IMC e sua categoria</label>
-        <button id="resultado" onclick="calcular(event)">calcular</button>
-        <br>
-        <textarea id="resultadotext" cols="15" rows="3" readonly></textarea>
+        <label for="altura">Digite a sua altura (m):</label>
+        <input type="number" id="altura" placeholder="Digite aqui" step="0.01" required>
+
+        <label for="peso">Digite o seu peso (kg):</label>
+        <input type="number" id="peso" placeholder="Digite aqui" step="0.1" required>
+
+        <label for="sexo">Informe seu sexo:</label>
+        <select id="sexo" required>
+            <option value="mulher">Mulher</option>
+            <option value="homem">Homem</option>
+        </select>
+
+        <button id="botao" onclick="calcular(event)">Calcular</button>
+
+        <textarea id="resultadotext" readonly></textarea>
     </form>
 
     <script>
-        function calcular() {
-            event.
-                preventDefault();
+        function calcular(event) {
+            event.preventDefault(); // Previne o envio do formulário
+
             const altura = parseFloat(document.getElementById("altura").value);
             const peso = parseFloat(document.getElementById("peso").value);
-            const radios = document.getElementsByName("sexo");
-            const resultado = document.getElementById("resultado")
-            const resultadotext = document.getElementById("resultadotext").value;
+            const sexo = document.getElementById("sexo").value; // Captura o valor do sexo corretamente
 
-            let sexo;
-            for (let i = 0; i < radios.length; i++) {
-                if (radios[i].checked) {
-                    sexo = radios[i].value;
-                    break;
-                }
+            // Verifica se altura e peso são válidos
+            if (isNaN(altura) || isNaN(peso) || altura <= 0 || peso <= 0) {
+                document.getElementById("resultadotext").value = "Por favor, insira valores válidos para altura e peso.";
+                return;
             }
 
             let IMC = peso / (altura * altura);
+            let categoria = '';
 
-            if (isNaN(altura) || isNaN(peso) || !sexo) {
-                resultadotext.value = document.getElementById("resultado") = 'insira um valor valido';
-            } else if (radios === "m") {
+            // Determinando a categoria com base no IMC e sexo
+            if (sexo === 'mulher') {
+                if (IMC < 19.1) {
+                    categoria = 'Abaixo do peso';
+                } else if (IMC >= 19.1 && IMC <= 25.8) {
+                    categoria = 'Peso normal';
+                } else if (IMC > 25.8 && IMC <= 27.3) {
+                    categoria = 'Marginalmente acima do peso';
+                } else if (IMC > 27.3 && IMC <= 32.3) {
+                    categoria = 'Acima do peso ideal';
+                } else {
+                    categoria = 'Obeso';
+                }
+            } else { // Para homens
                 if (IMC < 20.7) {
-                    resultadotext.value = document.getElementById("resultado") = 'Você está abaixo do peso';
+                    categoria = 'Abaixo do peso';
+                } else if (IMC >= 20.7 && IMC <= 26.4) {
+                    categoria = 'Peso normal';
+                } else if (IMC > 26.4 && IMC <= 27.8) {
+                    categoria = 'Marginalmente acima do peso';
+                } else if (IMC > 27.8 && IMC <= 31.1) {
+                    categoria = 'Acima do peso ideal';
+                } else {
+                    categoria = 'Obeso';
                 }
             }
+
+            // Exibe o resultado
+            document.getElementById("resultadotext").value = "IMC: " + IMC.toFixed(2) + "\n" +
+                "Categoria: " + categoria;
         }
     </script>
 </body>
